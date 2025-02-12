@@ -449,8 +449,11 @@ export default {
   data () {
     return {
       variaveis: [
-        { label: 'Nome', value: '{{name}}' },
-        { label: 'Saudação', value: '{{greeting}}' }
+      variaveis: [
+      { label: 'Nome', value: '{{name}}' },
+        { label: 'Saudação', value: '{{greeting}}' },
+        { label: 'despedida', value: '{{farewell}}' },
+        { label: 'Protocolo', value: '{{protocol}}' }
       ],
       optRadio: [
         { label: 'Msg.1', value: 'message1' },
