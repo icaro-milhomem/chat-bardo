@@ -17,7 +17,7 @@
   "engines": {
     "node": ">=20"
   },
-  "author": "Durans/FlowDeskPro/TiOKaBuM",
+  "author": "Icaro Milhomem",
   "private": false,
   "license": "AGPL-3.0-or-later",
   "dependencies": {
