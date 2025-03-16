@@ -7,8 +7,12 @@ const Consumer360 = async () => {
   const rabbit = new RabbitmqServer(process.env.AMQP_URL || "");
   await rabbit.start();
   rabbit.consume("waba360", message => {
+    if (message === null) return;
+    
     const content = JSON.parse(message.content.toString());
     const decode: any = verify(content.token, authConfig.secret);
+    if (!decode) return;
+    
     HandleMessage360(content.messages, decode.whatsappId);
   });
 };

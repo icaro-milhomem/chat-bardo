@@ -13,6 +13,8 @@ const MessengerConsumer = async () => {
   // Configura o consumidor para a fila 'messenger'
   // Processa cada mensagem recebida de forma assíncrona
   rabbit.consume("messenger", message => {
+    if (message === null) return;
+    
     // Converte o conteúdo da mensagem de buffer para objeto
     const content = JSON.parse(message.content.toString());
     // Verifica a autenticidade do token JWT
